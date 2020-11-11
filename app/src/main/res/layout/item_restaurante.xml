@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="260dp"
     card_view:cardCornerRadius="10dp"
-    android:layout_margin="8dp">
+    android:layout_margin="8dp"
+    card_view:cardElevation="0dp">
 
     <LinearLayout
         android:id="@+id/llRest"
