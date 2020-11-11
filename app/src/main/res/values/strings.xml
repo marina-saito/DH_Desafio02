@@ -11,4 +11,6 @@
     <string name="log_in">LOG IN</string>
     <string name="register">Register</string>
     <string name="digitalhouse">DigitalHouse</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
