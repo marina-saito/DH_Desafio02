@@ -10,4 +10,5 @@
     <string name="pwd">***********</string>
     <string name="log_in">LOG IN</string>
     <string name="register">Register</string>
+    <string name="digitalhouse">DigitalHouse</string>
 </resources>
