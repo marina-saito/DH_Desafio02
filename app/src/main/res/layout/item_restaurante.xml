@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="260dp"
+    card_view:cardCornerRadius="10dp"
+    android:layout_margin="8dp">
+
+    <LinearLayout
+        android:id="@+id/llRest"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:backgroundTint="#FFFFFF">
+
+        <com.example.desafio02.CustomImgView
+            android:id="@+id/ivRestaurant"
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:scaleType="matrix"
+            android:adjustViewBounds="true"
+            android:src="@drawable/tony_romas"/>
+
+
+        <TextView
+            android:id="@+id/tvRestaurantName"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Tony Roma's"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/tvRestaurantAddress"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Av. Lavandisca, 717 - Indianópolis, São Paulo"
+            android:textSize="14dp"
+            android:paddingLeft="15dp"/>
+        <TextView
+            android:id="@+id/tvRestaurantWkgHrs"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="Fecha às 22:00"
+            android:textSize="14dp"
+            android:paddingLeft="15dp"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
