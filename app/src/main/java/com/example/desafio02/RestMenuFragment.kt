@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_restaurants.*
 import kotlinx.android.synthetic.main.fragment_restaurants.view.*
 import kotlinx.android.synthetic.main.fragment_restmenu.*
@@ -23,9 +24,8 @@ class RestMenuFragment : Fragment(), DishAdapter.OnClickDishListener {
     //val layoutManager = GridLayoutManager(context, 2)
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        cma.transpActionBar()
         super.onCreate(savedInstanceState)
-//        cma.transpActionBar()
+        cma.transpActionBar()
     }
 
     override fun onCreateView(
@@ -41,12 +41,14 @@ class RestMenuFragment : Fragment(), DishAdapter.OnClickDishListener {
         view.tvRestMenu.text = requireArguments().getString("restName")
         view.ivRestMenu.setImageResource(requireArguments().getInt("restImg"))
 
+        view.rvDishes.isNestedScrollingEnabled = false
+
         return view
     }
 
     override fun onResume() {
-        cma.transpActionBar()
         super.onResume()
+        cma.transpActionBar()
     }
 
     override fun onAttach(context: Context) {

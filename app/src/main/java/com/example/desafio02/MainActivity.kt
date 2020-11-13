@@ -61,7 +61,6 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
 
         if (currFrag == R.id.registerFragment)
             findNavController(R.id.navHostfragment).popBackStack(R.id.loginFragment, false)
-
     }
 
 }

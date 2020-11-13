@@ -2,11 +2,10 @@ package com.example.desafio02
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_restaurants.view.*
@@ -21,16 +20,9 @@ class RestaurantsFragment() : Fragment(), RestAdapter.OnClickRestListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         cma.removeArrow()
         cma.opaqueActionBar()
-        super.onCreate(savedInstanceState)
-
-
-
-//        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
-//            findNavController().navigate(R.id.loginFragment)
-//        }
-
     }
 
     override fun onCreateView(
@@ -44,25 +36,20 @@ class RestaurantsFragment() : Fragment(), RestAdapter.OnClickRestListener {
         view.rvRestaurantes.adapter = adapterRest
         view.rvRestaurantes.layoutManager = LinearLayoutManager(context)
         view.rvRestaurantes.setHasFixedSize(true)
+
         return view
     }
 
     override fun onResume() {
+        super.onResume()
         cma.removeArrow()
         cma.opaqueActionBar()
-        super.onResume()
     }
-
-//    override fun onPause() {
-//        findNavController().popBackStack(R.id.loginFragment, false)
-//        super.onPause()
-//    }
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is ContractMainActivity) cma = context
-
+        cma.removeArrow()
     }
 
     fun getAllRests() = arrayListOf(
@@ -102,7 +89,10 @@ class RestaurantsFragment() : Fragment(), RestAdapter.OnClickRestListener {
             putString("restName", restaurant.name)
             putInt("restImg", restaurant.img) }
             //bundleOf(restName to restName, restImg to restImg)
-        findNavController().navigate(R.id.action_restaurantsFragment_to_restMenuFragment, bundleRest)
+        findNavController().navigate(
+            R.id.action_restaurantsFragment_to_restMenuFragment,
+            bundleRest
+        )
     }
 
 

@@ -14,8 +14,8 @@ class LoginFragment : Fragment() {
     private lateinit var cma: ContractMainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        cma.opaqueActionBar()
         super.onCreate(savedInstanceState)
+        cma.opaqueActionBar()
     }
 
     override fun onCreateView(

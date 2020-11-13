@@ -15,7 +15,6 @@ class RegisterFragment : Fragment() {
     private lateinit var cma: ContractMainActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        cma.opaqueActionBar()
         super.onCreate(savedInstanceState)
     }
 
@@ -27,7 +26,6 @@ class RegisterFragment : Fragment() {
         val view : View =  inflater.inflate(R.layout.fragment_register, container, false)
 
         view.btnRegisterEff.setOnClickListener {
-            cma.removeArrow()
             findNavController().navigate(R.id.action_registerFragment_to_restaurantsFragment)
         }
 

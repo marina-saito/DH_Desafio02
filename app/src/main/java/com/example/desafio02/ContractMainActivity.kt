@@ -7,5 +7,4 @@ interface ContractMainActivity {
     fun showArrow()
     fun transpActionBar()
     fun opaqueActionBar()
-
 }
