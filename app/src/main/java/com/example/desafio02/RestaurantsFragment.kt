@@ -6,18 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.fragment_login.view.*
-import kotlinx.android.synthetic.main.fragment_restaurants.*
 import kotlinx.android.synthetic.main.fragment_restaurants.view.*
 
-class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
+class RestaurantsFragment() : Fragment(), RestAdapter.OnClickRestListener {
 
     private lateinit var cma: ContractMainActivity
 
     var listRests = getAllRests()
     val adapterRest = RestAdapter(listRests, this)
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -92,10 +92,20 @@ class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
         )
     )
 
+
     override fun onClickRest(position: Int) {
         var restaurant = listRests.get(position)
         cma.showArrow()
-        findNavController().navigate(R.id.action_restaurantsFragment_to_restMenuFragment)
+//        val restName = restaurant.name
+//        val restImg = restaurant.img
+        val bundleRest = Bundle().apply {
+            putString("restName", restaurant.name)
+            putInt("restImg", restaurant.img) }
+            //bundleOf(restName to restName, restImg to restImg)
+        findNavController().navigate(R.id.action_restaurantsFragment_to_restMenuFragment, bundleRest)
     }
+
+
+
 
 }

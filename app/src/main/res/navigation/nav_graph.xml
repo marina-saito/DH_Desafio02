@@ -46,6 +46,14 @@
         <action
             android:id="@+id/action_restMenuFragment_to_dishFragment"
             app:destination="@id/dishFragment" />
+        <argument
+            android:name="restName"
+            app:argType="string"
+            android:defaultValue="xxxx" />
+        <argument
+            android:name="restImg"
+            app:argType="integer"
+            android:defaultValue="1" />
     </fragment>
     <fragment
         android:id="@+id/dishFragment"

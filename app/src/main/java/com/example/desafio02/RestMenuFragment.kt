@@ -38,6 +38,9 @@ class RestMenuFragment : Fragment(), DishAdapter.OnClickDishListener {
         view.rvDishes.layoutManager = GridLayoutManager(context, 2)
         view.rvDishes.setHasFixedSize(true)
 
+        view.tvRestMenu.text = requireArguments().getString("restName")
+        view.ivRestMenu.setImageResource(requireArguments().getInt("restImg"))
+
         return view
     }
 
