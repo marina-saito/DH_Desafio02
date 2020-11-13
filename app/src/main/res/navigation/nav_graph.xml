@@ -20,7 +20,11 @@
         android:id="@+id/restaurantsFragment"
         android:name="com.example.desafio02.RestaurantsFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_restaurants" />
+        tools:layout="@layout/fragment_restaurants" >
+        <action
+            android:id="@+id/action_restaurantsFragment_to_restMenuFragment2"
+            app:destination="@id/restMenuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.desafio02.RegisterFragment"
@@ -30,4 +34,18 @@
             android:id="@+id/action_registerFragment_to_restaurantsFragment"
             app:destination="@id/restaurantsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/restMenuFragment"
+        android:name="com.example.desafio02.RestMenuFragment"
+        android:label=""
+        tools:layout="@layout/fragment_restmenu"  >
+        <action
+            android:id="@+id/action_restMenuFragment_to_dishFragment"
+            app:destination="@id/dishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dishFragment"
+        android:name="com.example.desafio02.DishFragment"
+        android:label="fragment_dish"
+        tools:layout="@layout/fragment_dish" />
 </navigation>

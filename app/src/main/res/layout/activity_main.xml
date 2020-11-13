@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/clMain">
+
 
     <fragment
-        android:id ="@+id/navHostfragment"
-        android:layout_width ="match_parent"
-        android:layout_height ="match_parent"
-        android:name ="androidx.navigation.fragment.NavHostFragment"
-        app:defaultNavHost ="true"
-        app:navGraph ="@navigation/nav_graph" /> 
+        android:id="@+id/navHostfragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_graph" /> 
 
-</LinearLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/colorWhite"
+        android:background="@color/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

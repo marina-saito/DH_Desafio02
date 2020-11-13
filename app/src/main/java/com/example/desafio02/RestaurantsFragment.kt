@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_login.view.*
 import kotlinx.android.synthetic.main.fragment_restaurants.*
 import kotlinx.android.synthetic.main.fragment_restaurants.view.*
 
@@ -19,8 +21,9 @@ class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         cma.removeArrow()
+        cma.opaqueActionBar()
+        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -28,18 +31,27 @@ class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
         savedInstanceState: Bundle?
     ): View? {
 
+
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_restaurants, container, false)
         view.rvRestaurantes.adapter = adapterRest
         view.rvRestaurantes.layoutManager = LinearLayoutManager(context)
         view.rvRestaurantes.setHasFixedSize(true)
 
+
         return view
+    }
+
+    override fun onResume() {
+        cma.removeArrow()
+        cma.opaqueActionBar()
+        super.onResume()
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is ContractMainActivity) cma = context
+
     }
 
     fun getAllRests() = arrayListOf(
@@ -70,9 +82,9 @@ class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
     )
 
     override fun onClickRest(position: Int) {
-        var aluno = listRests.get(position)
-        //aluno.nome = "Pedro" // Altera o nome apenas nos dados, ou seja, na lista de alunos
-        //adapterAlunos.notifyItemChanged(position) // Altera a visualização do adapter. Sem essa linha, o nome do alunp é alterado mas não é mostrado no app
-        //Toast.makeText(this, aluno.nome, Toast.LENGTH_SHORT).show()
+        var restaurant = listRests.get(position)
+        cma.showArrow()
+        findNavController().navigate(R.id.action_restaurantsFragment_to_restMenuFragment2)
+
     }
 }

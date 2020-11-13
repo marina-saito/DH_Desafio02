@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".RestaurantsFragment"
-    android:background="@color/backgroundMain">
+    android:background="@color/backgroundMain"
+    android:layout_marginTop="60dp">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRestaurantes"
