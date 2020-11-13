@@ -25,7 +25,7 @@
             android:layout_height="165dp"
             android:scaleType="matrix"
             android:adjustViewBounds="true"
-            android:src="@drawable/tony_romas"/>
+            android:src="@mipmap/tony_romas"/>
 
 
         <TextView

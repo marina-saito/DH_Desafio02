@@ -28,6 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/colorWhite"
         android:background="@color/colorPrimary"
-        app:theme="@style/ThemeOverlay.AppCompat"/>
+        app:theme="@style/ThemeOverlay.AppCompat"
+        android:theme="@style/Theme.WhiteArrow"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

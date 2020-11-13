@@ -55,7 +55,7 @@ class RestMenuFragment : Fragment(), DishAdapter.OnClickDishListener {
         var arrayListOfDishes : ArrayList<Dish> = ArrayList()
 
         for (i in 0..9)
-            arrayListOfDishes.add(Dish("Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis.", R.drawable.aoyama))
+            arrayListOfDishes.add(Dish("Salada com molho Gengibre", "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis.", R.mipmap.aoyama))
 
         return arrayListOfDishes
     }

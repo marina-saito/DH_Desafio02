@@ -12,6 +12,7 @@ import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -35,7 +36,6 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
         appBarConfiguration = AppBarConfiguration(navController.graph) // Pega o graph do controller
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -58,6 +58,17 @@ class MainActivity : AppCompatActivity(), ContractMainActivity {
     override fun opaqueActionBar() {
         supportActionBar?.setBackgroundDrawable(ColorDrawable(getColor(R.color.colorPrimary)))
         supportActionBar?.setDisplayShowTitleEnabled(true)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        val navHostFrag = supportFragmentManager.findFragmentById(R.id.navHostfragment)
+        val currFrag = navHostFrag?.findNavController()?.currentDestination?.id
+
+        if (currFrag == R.id.registerFragment)
+            findNavController(R.id.navHostfragment).popBackStack(R.id.loginFragment, false)
+
     }
 
 }

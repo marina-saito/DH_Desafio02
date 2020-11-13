@@ -24,6 +24,13 @@ class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
         cma.removeArrow()
         cma.opaqueActionBar()
         super.onCreate(savedInstanceState)
+
+
+
+//        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+//            findNavController().navigate(R.id.loginFragment)
+//        }
+
     }
 
     override fun onCreateView(
@@ -37,8 +44,6 @@ class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
         view.rvRestaurantes.adapter = adapterRest
         view.rvRestaurantes.layoutManager = LinearLayoutManager(context)
         view.rvRestaurantes.setHasFixedSize(true)
-
-
         return view
     }
 
@@ -47,6 +52,12 @@ class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
         cma.opaqueActionBar()
         super.onResume()
     }
+
+//    override fun onPause() {
+//        findNavController().popBackStack(R.id.loginFragment, false)
+//        super.onPause()
+//    }
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -59,32 +70,32 @@ class RestaurantsFragment : Fragment(), RestAdapter.OnClickRestListener {
             "Tony Roma's",
             "Av. Lavandisca, 717 - Indianópolis, São Paulo",
             "Fecha às 22:00",
-            R.drawable.tony_romas
+            R.mipmap.tony_romas
         ),
         Restaurant(
             "Aoyama - Moema",
             "Alameda dos Arapanés, 532 - Moema",
             "Fecha às 00:00",
-            R.drawable.aoyama
+            R.mipmap.aoyama
         ),
         Restaurant(
             "Outback - Moema",
             "Av. Moaci, 187, 187 - Moema, São Paulo",
             "Fecha às 00:00",
-            R.drawable.outback
+            R.mipmap.outback
         ),
         Restaurant(
             "Sí Señor!",
             "Alameda Jauaperi, 626 - Moema",
             "Fecha às 01:00",
-            R.drawable.si_senor
+            R.mipmap.si_senor
         )
     )
 
     override fun onClickRest(position: Int) {
         var restaurant = listRests.get(position)
         cma.showArrow()
-        findNavController().navigate(R.id.action_restaurantsFragment_to_restMenuFragment2)
-
+        findNavController().navigate(R.id.action_restaurantsFragment_to_restMenuFragment)
     }
+
 }
